@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "./components/Navbar";
 import ContentBox from "./components/ContentBox";
 import CommentSection from "./components/CommentSection";
 import icon1 from "./images/pane-1-icon.png";
@@ -9,6 +10,7 @@ import "./App.css";
 const App = () => {
   return (
     <div>
+      <Navbar />
       <ContentBox
         title="Blue"
         content="Blue is the color of the sky and sea. It is often associated with depth and stability. It symbolizes trust, loyalty, wisdom, confidence, intelligence, faith, trust, and heaven."

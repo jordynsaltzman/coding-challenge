@@ -17,8 +17,8 @@ const CommentSection = () => {
 
   return (
     <div>
-      {comments.map((comment) => (
-        <div>
+      {comments.map((comment, i) => (
+        <div key={i}>
           <p>{comment.name}</p>
           <p>{comment.email}</p>
           <p>{comment.body}</p>
