@@ -23,9 +23,11 @@ const CommentSection = () => {
         <h3>Comments</h3>
         {comments.map((comment, i) => (
           <Card key={i}>
-            <CardHeader>{comment.name}</CardHeader>
-            <CardTitle>{comment.email}</CardTitle>
-            <CardBody>{comment.body}</CardBody>
+            <CardHeader>
+              {comment.name}
+              <p>{comment.email}</p>
+            </CardHeader>
+            <CardBody>"{comment.body}"</CardBody>
           </Card>
         ))}
       </Col>
