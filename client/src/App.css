@@ -1,4 +1,8 @@
 /* styling nav */
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
 .nav-row {
   padding: 1.1rem 0;
 }
@@ -22,4 +26,22 @@
   text-align: center;
 }
 
-/* add media query for login button padding on mobile */
+/* style content boxes */
+
+.heading {
+  background-color: grey;
+  text-align: center;
+  color: white;
+}
+
+.content-box {
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 0 2.3rem rgba(0, 0, 0, 0.18);
+  padding: 3rem 2rem 1rem 2rem;
+  margin: 2rem 1rem;
+}
+
+.content-box-row {
+  justify-content: center;
+}
