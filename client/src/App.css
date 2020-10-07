@@ -61,6 +61,10 @@
   margin: 2rem 1rem;
 }
 
+.content-box:hover {
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.4);
+}
+
 .content-boxes-row {
   position: relative;
   bottom: 12rem;
@@ -112,5 +116,10 @@
 @media only screen and (max-width: 767px) {
   .logo {
     margin-bottom: 0.5rem;
+  }
+
+  .comment-section {
+    justify-content: center;
+    margin-top: -3rem;
   }
 }

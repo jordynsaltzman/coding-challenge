@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import GoogleLogin from "react-google-login";
+import { GoogleLogout } from "react-google-login";
 import logo from "../images/bytelion-logo.png";
 import { Row, Col } from "reactstrap";
 
@@ -32,6 +33,11 @@ const Navbar = () => {
           <div className="user-info">
             <p className="welcome-msg">Welcome, {name}</p>
             <img src={imageUrl} alt="User" className="profile-pic" />
+            <GoogleLogout
+              clientId="700739214835-5bkglg53lsc3bhmvu3tr5mod8mbjbsr5.apps.googleusercontent.com"
+              buttonText="Logout"
+              onLogoutSuccess={() => setLoginSuccess(false)}
+            ></GoogleLogout>
           </div>
         ) : (
           <GoogleLogin
