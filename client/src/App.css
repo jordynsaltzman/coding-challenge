@@ -22,6 +22,12 @@
   align-items: center;
 }
 
+.welcome-msg {
+  font-style: italic;
+  color: #212529;
+  padding-top: 0.6rem;
+}
+
 .nav-row .col-md-6 {
   text-align: center;
 }
@@ -34,7 +40,7 @@
   text-align: center;
   color: white;
   position: relative;
-  height: 35rem;
+  height: 30rem;
 }
 
 .heading h1 {
@@ -47,12 +53,21 @@
 
 .content-box {
   background-color: white;
-  color: #222;
+  color: #212529;
   text-align: center;
   justify-content: center;
   box-shadow: 0 0 2.3rem rgba(0, 0, 0, 0.18);
   padding: 3rem 1.5rem 2rem 1.5rem;
   margin: 2rem 1rem;
+}
+
+.content-boxes-row {
+  position: relative;
+  bottom: 12rem;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
 }
 
 .content-box p,
@@ -73,17 +88,11 @@
   height: 4.5rem;
 }
 
-.content-box-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: absolute;
-  bottom: -100px;
-}
+/* style comment section */
 
 .comment-section {
   justify-content: center;
-  margin-top: 8rem;
+  margin: -2rem 0 1rem 0;
 }
 
 .comment-section .card {
@@ -98,4 +107,10 @@
 .card-header p {
   margin: 0;
   font-style: italic;
+}
+
+@media only screen and (max-width: 767px) {
+  .logo {
+    margin-bottom: 0.5rem;
+  }
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Row, Col, Card, CardHeader, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardHeader, CardBody } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.css";
 
 const CommentSection = () => {
   const [comments, setComments] = useState([]);
@@ -9,7 +10,6 @@ const CommentSection = () => {
     axios
       .get("https://jsonplaceholder.typicode.com/comments")
       .then((res) => {
-        console.log(res.data);
         setComments(res.data);
       })
       .catch((err) => {

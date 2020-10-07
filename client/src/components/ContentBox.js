@@ -1,5 +1,6 @@
 import React from "react";
 import { Col } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.css";
 
 const ContentBox = ({ title, icon, content }) => {
   return (

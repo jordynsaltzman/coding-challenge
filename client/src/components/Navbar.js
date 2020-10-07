@@ -30,8 +30,8 @@ const Navbar = () => {
       <Col md="6">
         {loginSuccess ? (
           <div className="user-info">
-            <p>Welcome, {name}</p>
-            <img src={imageUrl} alt="Profile Picture" className="profile-pic" />
+            <p className="welcome-msg">Welcome, {name}</p>
+            <img src={imageUrl} alt="User" className="profile-pic" />
           </div>
         ) : (
           <GoogleLogin
