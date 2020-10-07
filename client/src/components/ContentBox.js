@@ -5,7 +5,9 @@ const ContentBox = ({ title, icon, content }) => {
   return (
     <Col md="3" className="content-box">
       <img src={icon} alt="Icon" />
-      <h1>{title}</h1>
+      <h5>
+        <strong>{title}</strong>
+      </h5>
       <p>{content}</p>
     </Col>
   );
