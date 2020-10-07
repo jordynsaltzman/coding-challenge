@@ -5,6 +5,7 @@ import CommentSection from "./components/CommentSection";
 import icon1 from "./images/pane-1-icon.png";
 import icon2 from "./images/pane-2-icon.png";
 import icon3 from "./images/pane-3-icon.png";
+
 import "./App.css";
 
 const App = () => {
