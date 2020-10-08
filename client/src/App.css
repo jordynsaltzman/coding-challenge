@@ -14,7 +14,7 @@
 .profile-pic {
   border-radius: 50%;
   height: 3.5rem;
-  margin-left: 1rem;
+  margin: 0 1rem;
 }
 
 .user-info {
@@ -59,6 +59,7 @@
   box-shadow: 0 0 2.3rem rgba(0, 0, 0, 0.18);
   padding: 3rem 1.5rem 2rem 1.5rem;
   margin: 2rem 1rem;
+  border-radius: 0.3rem;
 }
 
 .content-box:hover {

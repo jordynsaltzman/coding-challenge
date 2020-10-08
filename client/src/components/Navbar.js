@@ -20,6 +20,7 @@ const Navbar = () => {
   };
 
   const onLoginFailure = (response) => {
+    console.log(response.error);
     setLoginFailure(true);
   };
 
@@ -37,6 +38,7 @@ const Navbar = () => {
               clientId="700739214835-5bkglg53lsc3bhmvu3tr5mod8mbjbsr5.apps.googleusercontent.com"
               buttonText="Logout"
               onLogoutSuccess={() => setLoginSuccess(false)}
+              icon={false}
             ></GoogleLogout>
           </div>
         ) : (
