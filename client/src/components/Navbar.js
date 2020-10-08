@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import logo from "../images/bytelion-logo.png";
@@ -9,9 +9,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../App.css";
 
 const Navbar = () => {
-  const loggedIn = useSelector((state) => state.loggedIn);
-  const error = useSelector((state) => state.error);
-  const user = useSelector((state) => state.user);
+  const loggedIn = useSelector((state) => state.userReducer.loggedIn);
+  const error = useSelector((state) => state.userReducer.error);
+  const user = useSelector((state) => state.userReducer.user);
+  const loading = useSelector((state) => state.userReducer.loading);
   const dispatch = useDispatch();
 
   const onLoginSuccess = (response) => {
@@ -34,7 +35,9 @@ const Navbar = () => {
         </a>
       </Col>
       <Col md="6">
-        {loggedIn ? (
+        {loading ? (
+          <p className="welcome-msg">Loading...</p>
+        ) : loggedIn ? (
           <div className="user-info">
             <p className="welcome-msg">Welcome, {user.name}</p>
             <img src={user.imageUrl} alt="User" className="profile-pic" />

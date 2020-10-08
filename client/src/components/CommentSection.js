@@ -1,27 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { Row, Col, Card, CardHeader, CardBody } from "reactstrap";
+import { useSelector, useDispatch } from "react-redux";
 import "bootstrap/dist/css/bootstrap.css";
+import {
+  getCommentsSuccess,
+  getCommentsRequest,
+  getCommentsFailure,
+} from "../actions/commentsActions";
 
 const CommentSection = () => {
-  const [comments, setComments] = useState([]);
+  const commentsList = useSelector(
+    (state) => state.commentsReducer.commentsList
+  );
+  const loading = useSelector((state) => state.commentsReducer.loading);
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(getCommentsRequest());
     axios
       .get("https://jsonplaceholder.typicode.com/comments")
       .then((res) => {
-        setComments(res.data);
+        dispatch(getCommentsSuccess(res.data));
       })
       .catch((err) => {
-        console.log(err);
+        dispatch(getCommentsFailure(err));
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <Row className="comment-section">
       <Col md="6">
         <h3 className="comments-title">Comments</h3>
-        {comments.map((comment, i) => (
+        {loading ? <p>Loading...</p> : null}
+        {commentsList.map((comment, i) => (
           <Card key={i}>
             <CardHeader>
               {comment.name}
