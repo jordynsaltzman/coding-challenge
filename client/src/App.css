@@ -63,10 +63,15 @@
   padding: 3rem 1.5rem 2rem 1.5rem;
   margin: 2rem 1rem;
   border-radius: 0.3rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .content-box:hover {
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.4);
+}
+
+.content-box:hover h5 {
+  color: #06a7e2;
 }
 
 .content-boxes-row {
@@ -90,6 +95,7 @@
   font-size: 1.3rem;
   margin-top: 2.5rem;
   font-weight: bold;
+  transition: color 0.3s ease-in-out;
 }
 
 .content-box img {
@@ -107,18 +113,16 @@
   margin: 1rem 0;
 }
 
-.comment-section h3 {
-  text-align: center;
-  font-weight: bold;
-}
-
 .card-header p {
   margin: 0;
   font-style: italic;
+  color: #06a7e2;
 }
 
 .comments-title {
   margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 767px) {
