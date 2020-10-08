@@ -3,25 +3,27 @@ import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import logo from "../images/bytelion-logo.png";
 import { Row, Col } from "reactstrap";
-
+import { useSelector, useDispatch } from "react-redux";
+import { loginSuccess, loginFailure, userLogout } from "../actions/userActions";
 import "bootstrap/dist/css/bootstrap.css";
 import "../App.css";
 
 const Navbar = () => {
-  const [name, setName] = useState();
-  const [imageUrl, setImageUrl] = useState();
-  const [loginSuccess, setLoginSuccess] = useState(false);
-  const [loginFailure, setLoginFailure] = useState(false);
+  const loggedIn = useSelector((state) => state.loggedIn);
+  const error = useSelector((state) => state.error);
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const onLoginSuccess = (response) => {
-    setName(response.profileObj.name);
-    setImageUrl(response.profileObj.imageUrl);
-    setLoginSuccess(true);
+    dispatch(loginSuccess(response.profileObj));
   };
 
   const onLoginFailure = (response) => {
-    console.log(response.error);
-    setLoginFailure(true);
+    dispatch(loginFailure(response.error));
+  };
+
+  const onLogout = () => {
+    dispatch(userLogout());
   };
 
   return (
@@ -32,22 +34,23 @@ const Navbar = () => {
         </a>
       </Col>
       <Col md="6">
-        {loginSuccess ? (
+        {loggedIn ? (
           <div className="user-info">
-            <p className="welcome-msg">Welcome, {name}</p>
-            <img src={imageUrl} alt="User" className="profile-pic" />
+            <p className="welcome-msg">Welcome, {user.name}</p>
+            <img src={user.imageUrl} alt="User" className="profile-pic" />
             <GoogleLogout
               clientId="700739214835-5bkglg53lsc3bhmvu3tr5mod8mbjbsr5.apps.googleusercontent.com"
               buttonText="Logout"
-              onLogoutSuccess={() => setLoginSuccess(false)}
+              onLogoutSuccess={onLogout}
               icon={false}
+              className="login-btn"
             ></GoogleLogout>
           </div>
         ) : (
           <GoogleLogin
             clientId="700739214835-5bkglg53lsc3bhmvu3tr5mod8mbjbsr5.apps.googleusercontent.com"
             buttonText={
-              loginFailure ? "Error. Please try again." : "Sign in with Google"
+              error ? "Error. Please try again." : "Sign in with Google"
             }
             onSuccess={onLoginSuccess}
             onFailure={onLoginFailure}

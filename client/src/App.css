@@ -34,6 +34,10 @@
   align-items: center;
 }
 
+.login-btn:focus {
+  outline: 0.15rem solid #06a7e2;
+}
+
 /* style content boxes */
 
 .heading {
