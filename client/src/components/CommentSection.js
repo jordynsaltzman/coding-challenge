@@ -20,7 +20,7 @@ const CommentSection = () => {
   return (
     <Row className="comment-section">
       <Col md="6">
-        <h3>Comments</h3>
+        <h3 className="comments-title">Comments</h3>
         {comments.map((comment, i) => (
           <Card key={i}>
             <CardHeader>

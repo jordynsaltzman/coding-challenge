@@ -27,7 +27,9 @@ const Navbar = () => {
   return (
     <Row className="nav-row">
       <Col md="6">
-        <img src={logo} alt="Bytelion Logo" className="logo" />
+        <a href="/">
+          <img src={logo} alt="Bytelion Logo" className="logo" />
+        </a>
       </Col>
       <Col md="6">
         {loginSuccess ? (
